@@ -3,7 +3,7 @@
 import React from 'react';
 import { Alert, Button, Divider, Drawer } from 'rsuite';
 import { useProfile } from '../../context/profile.context';
-import { auth } from '../../misc/firebase';
+import { auth, database } from '../../misc/firebase';
 import EditableInput from '../EditableInput';
 
 const Dashboard = () => {
@@ -14,7 +14,16 @@ const Dashboard = () => {
   };
 
   const onSave = async newData => {
-    console.log(newData);
+    const userNicknameRef = database
+      .ref(`/profiles/${profile.uid}`)
+      .child('name');
+
+    try {
+      await userNicknameRef.set(newData);
+      Alert.success('Nickname updated');
+    } catch (err) {
+      Alert.error(err.message);
+    }
   };
   return (
     <>
