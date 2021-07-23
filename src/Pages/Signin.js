@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 import React from 'react';
 import firebase from 'firebase/app';
 import { Alert, Button, Col, Container, Grid, Icon, Panel, Row } from 'rsuite';
