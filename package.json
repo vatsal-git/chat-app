@@ -16,6 +16,7 @@
     "react-scripts": "4.0.3",
     "rsuite": "^4.10.2",
     "timeago-react": "^3.0.3",
+    "use-context-selector": "^1.3.7",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",

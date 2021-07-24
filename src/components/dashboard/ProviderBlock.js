@@ -1,5 +1,3 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Alert, Button, Icon, Tag } from 'rsuite';
 import firebase from 'firebase/app';
@@ -16,6 +14,7 @@ const ProviderBlock = () => {
   });
 
   const updateIsConnected = (providerId, value) => {
+    // eslint-disable-next-line arrow-body-style
     setIsConnected(p => {
       return { ...p, [providerId]: value };
     });
@@ -23,8 +22,6 @@ const ProviderBlock = () => {
 
   const unlink = async providerId => {
     try {
-      // eslint-disable-next-line no-console
-      console.log(auth.currentUser.providerData.length);
       if (auth.currentUser.providerData.length === 1) {
         throw new Error(`You can not disconnect from ${providerId}`);
       }
